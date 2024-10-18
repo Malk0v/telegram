@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Магазин выпечки</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Магазин</h1>
+
+    <div class="products">
+      <div class="product">
+        <h2>Pancake</h2>
+        <img src="./images/IMG_6929.jpg" alt="Pancake" width="150px" />
+
+        <p>Pancake</p>
+        <p>Цена: 1000 грн.</p>
+        <label for="quantity1">Количество:</label>
+        <!-- <input
+          type="number"
+          id="quantity1"
+          name="quantity1"
+          min="1"
+          value="1"
+        /> -->
+        <button class="add-to-cart" data-name="Pancake" data-price="1000">
+          Добавить в корзину
+        </button>
+        <!-- <p class="in-cart" style="display: none">Товар добавлен в корзину</p> -->
+      </div>
+
+      <div class="product">
+        <h2>Сookie</h2>
+        <img src="./images/IMG_6930.jpg" alt="Pancake" width="150px" />
+
+        <p>Сookie</p>
+        <p>Цена: 500 грн.</p>
+        <label for="quantity2">Количество:</label>
+        <!-- <input
+          type="number"
+          id="quantity2"
+          name="quantity2"
+          min="1"
+          value="1"
+        /> -->
+        <button class="add-to-cart" data-name="Сookie" data-price="1500">
+          Добавить в корзину
+        </button>
+        <!-- <p class="in-cart" style="display: none">Товар добавлен в корзину</p> -->
+      </div>
+    </div>
+
+    <!-- Иконка корзины -->
+    <div id="cart-icon">
+      <img src="./images/cart_icon.png" alt="Корзина" />
+      <span id="cart-count">0</span>
+    </div>
+
+    <!-- Модальное окно корзины -->
+    <div id="cart-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Корзина</h2>
+        <ul id="cart-items"></ul>
+        <p>Итого: <span id="total-price">0</span>грн.</p>
+
+        <!-- Форма заказа -->
+        <h3>Оформить заказ</h3>
+        <form id="cart-order-form">
+          <label for="name">Ваше имя:</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="phone">Телефон:</label>
+          <input type="tel" id="phone" name="phone" required />
+
+          <label for="address">Адрес доставки:</label>
+          <textarea id="address" name="address" required></textarea>
+
+          <button type="submit">Отправить заказ</button>
+        </form>
+
+        <p id="order-status"></p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
