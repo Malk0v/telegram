@@ -42,7 +42,7 @@ function updateCart() {
     const totalItemPrice = item.price * item.quantity;
     const li = document.createElement("li");
     li.innerHTML = `${item.name} - ${item.price} грн. x ${item.quantity} = ${totalItemPrice} грн. 
-                        <button class="remove-item" data-index="${index}">Удалить</button>`;
+        <button class="remove-item" data-index="${index}">Удалить</button>`;
     cartItemsList.appendChild(li);
   });
 
