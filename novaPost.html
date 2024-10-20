@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Интеграция с Новой Почтой и Telegram</title>
+    <link rel="stylesheet" href="./novastyles.css" />
+    <script type="module" src="./novaScript.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Создание отправления</h1>
+
+      <button id="loadCities">Загрузить города</button>
+      <form id="shipmentForm">
+        <label for="sender">Имя отправителя</label>
+        <input type="text" id="sender" name="sender" required />
+
+        <label for="phone">Телефон отправителя</label>
+        <input type="tel" id="phone" name="phone" required />
+
+        <label for="recipient">Имя получателя</label>
+        <input type="text" id="recipient" name="recipient" required />
+
+        <label for="recipientPhone">Телефон получателя</label>
+        <input type="tel" id="recipientPhone" name="recipientPhone" required />
+
+        <label for="cityRecipient">Город получателя</label>
+        <select id="cityRecipient" name="cityRecipient" required>
+          <option value="">Выберите город</option>
+        </select>
+
+        <label for="cost">Стоимость товара (грн)</label>
+        <input type="number" id="cost" name="cost" required />
+
+        <button type="submit">Создать отправление</button>
+      </form>
+
+      <div class="response" id="response"></div>
+    </div>
+  </body>
+</html>
