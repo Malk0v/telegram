@@ -4,6 +4,7 @@
 // const chatId = "-1002333743964";
 
 // nova post 'b363d42c53225af708f436fa467c6c8c';
+console.log(2);
 
 document.getElementById("loadCities").addEventListener("click", function () {
   const data = {
@@ -40,6 +41,8 @@ document.getElementById("loadCities").addEventListener("click", function () {
       alert(`Произошла ошибка при загрузке городов: ${error.message}`);
     });
 });
+
+console.log(3);
 // Обработка формы отправления
 document
   .getElementById("shipmentForm")
@@ -137,9 +140,9 @@ function sendToTelegram(
 
   const message = `
             Новая заявка:
-            Отправитель: ${sender}, Телефон: ${phone} <br>
-            Получатель: ${recipient}, Телефон: ${recipientPhone} <br>
-            Город получателя: ${cityRecipient} <br>
+            Отправитель: ${sender}, Телефон: ${phone}
+            Получатель: ${recipient}, Телефон: ${recipientPhone}
+            Город получателя: ${cityRecipient}
             Стоимость: ${cost} грн
         `;
 

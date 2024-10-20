@@ -115,7 +115,11 @@ document
     const address = document.getElementById("address").value;
 
     // Собираем информацию о заказе
-    let orderDetails = `Новый заказ:\nИмя: ${name}\nТелефон: ${phone}\nАдрес: ${address}\n\nТовары:\n`;
+    let orderDetails = `Заявка с сайта!\n
+      Отравитель: ${name}\n
+      Телефон: ${phone}\n
+      Адрес: ${address}\n
+      \n Товары:\n`;
 
     cartItems.forEach((item) => {
       orderDetails += `${item.name} - ${item.price} грн. x ${
@@ -134,6 +138,8 @@ document
     const telegramUrl = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(
       orderDetails
     )}`;
+
+    console.log(orderDetails);
 
     // Отправляем запрос в Telegram
     fetch(telegramUrl)
