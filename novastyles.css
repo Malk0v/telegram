@@ -4,6 +4,7 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -22,19 +23,23 @@ h1 {
 }
 form {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
 }
 label {
-  margin-bottom: 5px;
+  width: 300px;
+  margin: 1px;
+  padding: 1px;
   font-weight: bold;
 }
+select,
 input[type="text"],
 input[type="tel"],
-input[type="number"],
-select,
 button {
-  padding: 10px;
-  margin-bottom: 10px;
+  width: 300px;
+  padding: 7px;
+  margin: 3px;
   border-radius: 5px;
   border: 1px solid #ddd;
   font-size: 16px;
@@ -48,9 +53,35 @@ button {
 button:hover {
   background-color: #218838;
 }
+
 .response {
   margin-top: 20px;
   padding: 10px;
   border-radius: 5px;
+  background-color: #e9ecef;
+}
+.autocomplete {
+  position: relative;
+}
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #ddd;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: white;
+}
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: white;
+  border-bottom: 1px solid #ddd;
+}
+.autocomplete-items div:hover {
   background-color: #e9ecef;
 }

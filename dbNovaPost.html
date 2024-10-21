@@ -3,14 +3,69 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Товар 1</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <title>Интерактив с Новой Почтой</title>
+    <link rel="stylesheet" href="./novastyles.css" />
   </head>
   <body>
     <a href="./index.html">На главную</a>
-    <br />
-    смотри все в консоле)
-    <input type="text" id="name" name="name" required />
-    <script src="./bdPost.js"></script>
+    <div class="container">
+      <h1>Создание отправления</h1>
+
+      <form id="shipmentForm">
+        <label for="citySender">Город отправителя</label>
+        <div class="autocomplete">
+          <input
+            type="text"
+            id="citySender"
+            placeholder="Введите город отправителя"
+            autocomplete="off"
+            required
+          />
+          <div id="citySenderList" class="autocomplete-items"></div>
+        </div>
+
+        <label for="warehouseSender">Отделение отправителя</label>
+        <select id="warehouseSender" name="warehouseSender" required>
+          <option value="">Выберите отделение</option>
+        </select>
+
+        <label for="cityRecipient">Город получателя</label>
+        <div class="autocomplete">
+          <input
+            type="text"
+            id="cityRecipient"
+            placeholder="Введите город получателя"
+            autocomplete="off"
+            required
+          />
+          <div id="cityRecipientList" class="autocomplete-items"></div>
+        </div>
+
+        <label for="warehouseRecipient">Отделение получателя</label>
+        <select id="warehouseRecipient" name="warehouseRecipient" required>
+          <option value="">Выберите отделение</option>
+        </select>
+
+        <label for="sender">Имя отправителя</label>
+        <input type="text" id="sender" name="sender" required />
+
+        <label for="phone">Телефон отправителя</label>
+        <input type="tel" id="phone" name="phone" required />
+
+        <label for="recipient">Имя получателя</label>
+        <input type="text" id="recipient" name="recipient" required />
+
+        <label for="recipientPhone">Телефон получателя</label>
+        <input type="tel" id="recipientPhone" name="recipientPhone" required />
+
+        <label for="cost">Стоимость товара (грн)</label>
+        <input type="number" id="cost" name="cost" required />
+
+        <button type="submit">Создать отправление</button>
+      </form>
+
+      <div class="response" id="response"></div>
+    </div>
   </body>
+  <script src="./bdPost.js"></script>
 </html>
